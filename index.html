@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>教会でワイワイ楽しいクリスマス会2026</title>
     
-    <!-- テンプレート指定の高級感のある海外フォントと日本語フォントを読み込み -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* カラーパレットの適用 */
         :root {
             --primary-green: #123524;
             --wine-red: #8E1F2F;
@@ -31,7 +29,6 @@
             line-height: 1.8;
         }
 
-        /* テンプレートにある「雪がゆっくり動く背景」の表現 */
         .snow-bg {
             position: relative;
             background-image: 
@@ -48,7 +45,6 @@
             100% { background-position: 300px 600px; }
         }
 
-        /* Heroセクション：高級感のあるメイン看板 */
         .hero {
             background: linear-gradient(rgba(18, 53, 36, 0.4), rgba(18, 53, 36, 0.4)), url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
             height: 60vh;
@@ -84,7 +80,6 @@
             padding: 40px 20px;
         }
 
-        /* 駐車場：通常ゴールド→ホバーでダークゴールドに拡大する高級ボタン風 */
         .gold-button-style {
             background-color: var(--gold);
             color: white;
@@ -102,7 +97,6 @@
             transform: scale(1.03);
         }
 
-        /* テンプレート指定の「ガラス表現（backdrop-filter）のカード」 */
         .glass-card {
             background: rgba(255, 255, 255, 0.75);
             -webkit-backdrop-filter: blur(10px);
@@ -116,7 +110,7 @@
             transition: transform 0.4s ease;
         }
         .glass-card:hover {
-            transform: translateY(-5px); /* テンプレートの「浮き上がる」演出 */
+            transform: translateY(-5px);
         }
 
         .card-title {
@@ -129,7 +123,6 @@
             letter-spacing: 1px;
         }
 
-        /* 見出し横の金色ライン */
         .card-title::after {
             content: '';
             display: block;
@@ -152,12 +145,51 @@
             display: block;
             margin-bottom: 5px;
         }
+
+        /* 地図をスマホの画面幅にぴったり合わせる魔法 */
+        .map-container {
+            position: relative;
+            padding-bottom: 75%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* 写真を入れるオシャレな枠の並び */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .photo-item {
+            background-color: #eee;
+            border-radius: 15px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            border: 2px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
     </style>
 </head>
 <body>
 
     <div class="snow-bg">
-        <!-- メイン看板（Hero） -->
         <div class="hero">
             <h1 class="hero-title">Merry Christmas</h1>
             <p class="hero-subtitle">みんな集まれ！教会でワイワイ楽しい<br>クリスマス会2026 🎄</p>
@@ -174,6 +206,16 @@
                 🚗 今回は駐車場もあります！お車でも安心してお越しください♪
             </div>
 
+            <!-- 去年の写真ギャラリー（新設！） -->
+            <div class="glass-card">
+                <p class="card-title">Last Year's Memories</p>
+                <p style="font-size: 14px; color: #666; margin-bottom: 15px;">✨ 去年のワイワイ賑やかな様子です ✨</p>
+                <div class="photo-gallery">
+                    <div class="photo-item">【ここに写真1が入るよ】</div>
+                    <div class="photo-item">【ここに写真2が入るよ】</div>
+                </div>
+            </div>
+
             <!-- 日時カード -->
             <div class="glass-card">
                 <p class="card-title">Event Date</p>
@@ -183,16 +225,17 @@
                 </p>
             </div>
 
-            <!-- 場所カード -->
+            <!-- 場所カード（地図がはめ込まれました！） -->
             <div class="glass-card">
                 <p class="card-title">Access</p>
                 <p class="card-detail">
                     <b style="font-size: 17px;">熊本市東区</b><br>
                     <span style="font-size: 14px; color: #666;">（QQP4+XQ 熊本市、熊本県）</span>
-                    <span style="color: var(--wine-red); font-size: 13px; display: block; margin-top: 15px; font-weight: bold;">
-                        ↓この下にGoogleマップを埋め込みます！
-                    </span>
                 </p>
+                <!-- コピーしてもらったコードをスマホ対応にしてここに合体！ -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.823904935745!2d130.75516456280997!3d32.78579278524913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3540f2333015133f%3A0x3c3e20745cf78271!2z5Y健6LuN5pys55S65YWs5ZyS!5e0!3m2!1sja!2sjp!4v1782620105929!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
             </div>
         </div>
     </div>

@@ -45,8 +45,9 @@
             100% { background-position: 300px 600px; }
         }
 
+        /* 💡 ヘッダー：送っていただいた画像「hed_12.png」を背景に設定 */
         .hero {
-            background: linear-gradient(rgba(18, 53, 36, 0.4), rgba(18, 53, 36, 0.4)), url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('hed_12.png') center/cover no-repeat;
             height: 50vh;
             display: flex;
             flex-direction: column;
@@ -55,26 +56,32 @@
             color: white;
             text-align: center;
             padding: 20px;
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
         }
 
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 46px;
+            font-size: 42px;
             margin: 0;
             letter-spacing: 3px;
             color: var(--bg-cream);
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
+        /* 💡 スマホで変な改行にならないための魔法の設定（inline-block） */
         .hero-subtitle {
-            font-size: 20px;
+            font-size: 18px;
             margin: 20px 0 0 0;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-weight: bold;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            max-width: 90%;
+        }
+        
+        .hero-subtitle span {
+            display: inline-block; /* 単語の途中で改行させない設定 */
         }
 
-        /* 💡 ここがポイント：画面全体の入れ物（PCでは幅を広くします） */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -186,16 +193,15 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* 💡 パソコン（PC）の大画面で見ている時だけ発動する魔法の切り替えスイッチ */
         @media (min-width: 768px) {
             .main-layout {
                 display: grid;
-                grid-template-columns: 1.1fr 0.9fr; /* 左側を少し広く */
-                gap: 30px; /* 左右の余白をあける */
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 30px;
                 align-items: start;
             }
             .hero-title {
-                font-size: 60px; /* パソコンでは文字をさらに大きく */
+                font-size: 60px;
             }
             .hero-subtitle {
                 font-size: 24px;
@@ -208,8 +214,12 @@
     <div class="snow-bg">
         <div class="hero">
             <h1 class="hero-title">Merry Christmas</h1>
-            <p class="hero-subtitle">みんな集まれ！教会でワイワイ楽しい<br>クリスマス会2026 🎄</p>
-            <span style="color: var(--gold); font-size: 16px; margin-top: 15px; letter-spacing: 1px; font-weight: bold;">〜くまモンもやってくる！？〜</span>
+            <!-- 💡 各フレーバーを<span>で囲むことで、スマホでも変な位置で改行されないように美しく統一しました -->
+            <p class="hero-subtitle">
+                <span>みんな集まれ！</span><span>教会でワイワイ楽しい</span><br>
+                <span>クリスマス会2026 🎄</span>
+            </p>
+            <span style="color: var(--gold); font-size: 16px; margin-top: 15px; letter-spacing: 1px; font-weight: bold; text-shadow: 0 1px 5px rgba(0,0,0,0.5);">〜くまモンもやってくる！？〜</span>
         </div>
 
         <div class="container">
@@ -222,16 +232,27 @@
                 🚗 今回は駐車場もあります！お車でも安心してお越しください♪
             </div>
 
-            <!-- 💡 ここからパソコン用の横並びレイアウトがスタート -->
             <div class="main-layout">
                 
-                <!-- 【左側：思い出の写真ギャラリー】 -->
-                <div class="glass-card">
-                    <p class="card-title">Last Year's Memories</p>
-                    <p style="font-size: 14px; color: #666; margin-bottom: 15px; text-align: center;">✨ 去年のワイワイ賑やかな様子です ✨</p>
-                    <div class="photo-gallery">
-                        <div class="photo-item">【ここに写真1が入るよ】</div>
-                        <div class="photo-item">【ここに写真2が入るよ】</div>
+                <!-- 【左側：思い出の写真ギャラリー＆大切なお願い】 -->
+                <div class="left-side">
+                    <!-- 去年の写真ギャラリー -->
+                    <div class="glass-card">
+                        <p class="card-title">Last Year's Memories</p>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 15px; text-align: center;">✨ 去年のワイワイ賑やかな様子です ✨</p>
+                        <div class="photo-gallery">
+                            <div class="photo-item">【ここに写真1が入るよ】</div>
+                            <div class="photo-item">【ここに写真2が入るよ】</div>
+                        </div>
+                    </div>
+
+                    <!-- 💡 ゴミの持ち帰りに関する大切なお願いカード（新設！） -->
+                    <div class="glass-card" style="border: 2px dashed var(--wine-red);">
+                        <p class="card-title" style="color: var(--wine-red);">Notice</p>
+                        <p class="card-detail" style="font-weight: bold; color: var(--wine-red); font-size: 15px;">
+                            🍁 【美化協力のお願い】 🍁<br>
+                            当日はバザーやカレーパーティーがございますが、会場の環境美化のため、お配りした容器や出たゴミは各自でお持ち帰りのご協力をお願いいたします。みんなで気持ちよく、綺麗なクリスマス会を楽しみましょう！
+                        </p>
                     </div>
                 </div>
 
@@ -246,12 +267,12 @@
                         </p>
                     </div>
 
-                    <!-- 場所カード -->
+                    <!-- 場所カード：住所を正確な表記「熊本市東区新生2丁目28-13」へ更新！ -->
                     <div class="glass-card">
                         <p class="card-title">Access</p>
                         <p class="card-detail">
-                            <b style="font-size: 17px;">熊本市東区</b><br>
-                            <span style="font-size: 14px; color: #666;">（QQP4+XQ 熊本市、熊本県）</span>
+                            <b style="font-size: 18px; color: var(--primary-green);">熊本市東区新生2丁目28-13</b><br>
+                            <span style="font-size: 14px; color: #666; display: block; margin-top: 5px;">（健軍本町公園のすぐ近くです）</span>
                         </p>
                         <div class="map-container">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.823904935745!2d130.75516456280997!3d32.78579278524913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3540f2333015133f%3A0x3c3e20745cf78271!2z5Y健6LuN5pys55S65YWs5ZyS!5e0!3m2!1sja!2sjp!4v1782620105929!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -259,7 +280,7 @@
                     </div>
                 </div>
 
-            </div> <!-- レイアウト終了 -->
+            </div>
         </div>
     </div>
 

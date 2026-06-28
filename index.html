@@ -4,95 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>教会でワイワイ楽しいクリスマス会2026</title>
+    <!-- ネット上のおしゃれなフォントを読み込みます -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-            background-color: #f7f1e3; /* より温かみのある北欧風の背景色 */
-            color: #2c3e50;
+            font-family: 'Zen Maru Gothic', sans-serif; /* まあるい可愛いフォント */
+            background-color: #f2ede4; /* ぬくもりのある北欧風エクリュカラー */
+            color: #3e3830;
             margin: 0;
             padding: 0;
             text-align: center;
             line-height: 1.8;
+            /* 背景に可愛い「雪」を降らせます */
+            background-image: 
+                radial-gradient(circle at 20% 30%, #fff 2px, transparent 3px),
+                radial-gradient(circle at 75% 15%, #fff 3px, transparent 4px),
+                radial-gradient(circle at 50% 60%, #fff 2px, transparent 3px),
+                radial-gradient(circle at 85% 70%, #fff 4px, transparent 5px);
+            background-size: 200px 200px;
         }
-        /* 看板部分：グラデーションとリボン風のデザイン */
+        /* メインの看板：角を丸くして、絵本のような可愛い形に */
         .header {
-            background: linear-gradient(135deg, #b33939, #8c1c1c); /* 深みのあるクリスマスレッド */
+            background: linear-gradient(145deg, #a62b2b, #801a1a); /* 深みのある大人可愛い赤 */
             color: white;
-            padding: 50px 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: relative;
+            padding: 60px 20px;
+            margin: 15px;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(128,26,26,0.15);
         }
         .header h1 {
             margin: 0;
-            font-size: 26px;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.5;
         }
         .header h2 {
-            color: #ffda79; /* 優しいゴールド */
+            color: #fcd766; /* 優しいはちみつゴールド */
             margin: 15px 0 0 0;
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 500;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
         }
         .content {
-            padding: 40px 20px;
-            max-width: 600px;
+            padding: 20px 20px 40px 20px;
+            max-width: 500px;
             margin: 0 auto;
         }
-        /* メインの紹介文 */
         .intro-text {
-            font-size: 18px;
-            color: #34495e;
-            margin-bottom: 30px;
-            padding: 0 10px;
+            font-size: 16px;
+            color: #5a5247;
+            margin: 25px 0;
         }
-        /* 目玉情報の緑色の帯（角を丸くして立体的に） */
+        /* 駐車場のお知らせ：タグのようにおしゃれに変身 */
         .highlight {
-            background-color: #218c74; /* もみの木グリーン */
+            background-color: #1e735d; /* 深みのあるフォレストグリーン */
             color: white;
-            padding: 18px;
-            border-radius: 15px;
+            padding: 16px;
+            border-radius: 20px;
             margin: 30px 0;
-            font-weight: bold;
-            font-size: 18px;
-            box-shadow: 0 4px 10px rgba(33, 140, 116, 0.3);
+            font-size: 16px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(30, 115, 93, 0.2);
         }
-        /* 情報ボックス（高級感のある白いカード風） */
+        /* 情報カード：丸みを強くして、ふんわり立体的に */
         .info-card {
             background-color: white;
-            border-radius: 15px;
+            border-radius: 24px;
             padding: 25px;
-            margin: 25px 0;
-            text-align: left;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* 優しい影 */
-            border-left: 6px solid #b33939; /* 左側にアクセントの赤線 */
+            margin: 20px 0;
+            text-align: center; /* 中央揃えでおしゃれに */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            border: 2px solid #eadecc;
         }
         .info-title {
-            color: #b33939;
-            font-weight: bold;
-            font-size: 19px;
+            color: #a62b2b;
+            font-weight: 700;
+            font-size: 17px;
             margin-top: 0;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
         }
         .info-detail {
-            font-size: 17px;
+            font-size: 16px;
             margin: 0;
-            color: #2c3e50;
+            color: #3e3830;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>みんな集まれ！<br>教会でワイワイ楽しいクリスマス会2026 🎄</h1>
+        <h1>みんな集まれ！<br>教会でワイワイ楽しい<br>クリスマス会2026 🎄</h1>
         <h2>〜くまモンもやってくる！？〜</h2>
     </div>
 
     <div class="content">
         <p class="intro-text">
-            美味しいカレーパーティーやバザー、楽しいステージにサン塔（サンタ）さんも登場！みんなで最高の思い出を一緒に作りましょう！
+            美味しいカレーパーティーやバザー、楽しいステージにサンタさんも登場！みんなで最高の思い出を一緒に作りましょう！
         </p>
 
         <div class="highlight">
@@ -100,7 +114,7 @@
         </div>
 
         <div class="info-card">
-            <p class="info-title">📅 いつ（日時）</p>
+            <p class="info-title">📅 いつ</p>
             <p class="info-detail">
                 <b>2026年12月5日（土）</b><br>
                 11:00 〜 15:30
@@ -108,11 +122,12 @@
         </div>
 
         <div class="info-card">
-            <p class="info-title">📍 どこで（場所）</p>
+            <p class="info-title">📍 どこで</p>
             <p class="info-detail">
-                <b>熊本市東区（QQP4+XQ 熊本市、熊本県）</b><br>
-                <span style="color: #7f8c8d; font-size: 14px; display: block; margin-top: 5px;">
-                    ※詳しい地図（Googleマップ）は、このあとすぐ連動させます！
+                <b>熊本市東区</b><br>
+                <span style="font-size: 14px; color: #8a7e72;">（QQP4+XQ 熊本市、熊本県）</span>
+                <span style="color: #1e735d; font-size: 13px; display: block; margin-top: 8px; font-weight: bold;">
+                    ※下にGoogleマップを表示する準備中！
                 </span>
             </p>
         </div>

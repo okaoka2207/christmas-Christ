@@ -4,132 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>教会でワイワイ楽しいクリスマス会2026</title>
-    <!-- ネット上のおしゃれなフォントを読み込みます -->
+    
+    <!-- テンプレート指定の高級感のある海外フォントと日本語フォントを読み込み -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
+        /* カラーパレットの適用 */
+        :root {
+            --primary-green: #123524;
+            --wine-red: #8E1F2F;
+            --gold: #D4AF37;
+            --dark-gold: #aa8c2c;
+            --bg-cream: #FFF9F3;
+            --text-dark: #2E2E2E;
+        }
+
         body {
-            font-family: 'Zen Maru Gothic', sans-serif; /* まあるい可愛いフォント */
-            background-color: #f2ede4; /* ぬくもりのある北欧風エクリュカラー */
-            color: #3e3830;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
             margin: 0;
             padding: 0;
-            text-align: center;
+            overflow-x: hidden;
             line-height: 1.8;
-            /* 背景に可愛い「雪」を降らせます */
+        }
+
+        /* テンプレートにある「雪がゆっくり動く背景」の表現 */
+        .snow-bg {
+            position: relative;
             background-image: 
-                radial-gradient(circle at 20% 30%, #fff 2px, transparent 3px),
-                radial-gradient(circle at 75% 15%, #fff 3px, transparent 4px),
-                radial-gradient(circle at 50% 60%, #fff 2px, transparent 3px),
-                radial-gradient(circle at 85% 70%, #fff 4px, transparent 5px);
-            background-size: 200px 200px;
+                radial-gradient(circle at 10% 20%, #fff 3px, transparent 4px),
+                radial-gradient(circle at 80% 40%, #fff 2px, transparent 3px),
+                radial-gradient(circle at 30% 70%, #fff 4px, transparent 5px),
+                radial-gradient(circle at 70% 85%, #fff 2px, transparent 3px);
+            background-size: 300px 300px;
+            animation: snowMove 20s linear infinite;
         }
-        /* メインの看板：角を丸くして、絵本のような可愛い形に */
-        .header {
-            background: linear-gradient(145deg, #a62b2b, #801a1a); /* 深みのある大人可愛い赤 */
+
+        @keyframes snowMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 300px 600px; }
+        }
+
+        /* Heroセクション：高級感のあるメイン看板 */
+        .hero {
+            background: linear-gradient(rgba(18, 53, 36, 0.4), rgba(18, 53, 36, 0.4)), url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             color: white;
-            padding: 60px 20px;
-            margin: 15px;
-            border-radius: 24px;
-            box-shadow: 0 8px 24px rgba(128,26,26,0.15);
+            text-align: center;
+            padding: 20px;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
         }
-        .header h1 {
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
             margin: 0;
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.5;
+            letter-spacing: 3px;
+            color: var(--bg-cream);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-        .header h2 {
-            color: #fcd766; /* 優しいはちみつゴールド */
-            margin: 15px 0 0 0;
+
+        .hero-subtitle {
             font-size: 18px;
-            font-weight: 500;
-            background: rgba(255,255,255,0.15);
-            display: inline-block;
-            padding: 4px 16px;
-            border-radius: 20px;
+            margin: 20px 0 0 0;
+            letter-spacing: 2px;
+            font-weight: bold;
         }
-        .content {
-            padding: 20px 20px 40px 20px;
-            max-width: 500px;
+
+        .container {
+            max-width: 600px;
             margin: 0 auto;
+            padding: 40px 20px;
         }
-        .intro-text {
-            font-size: 16px;
-            color: #5a5247;
-            margin: 25px 0;
-        }
-        /* 駐車場のお知らせ：タグのようにおしゃれに変身 */
-        .highlight {
-            background-color: #1e735d; /* 深みのあるフォレストグリーン */
+
+        /* 駐車場：通常ゴールド→ホバーでダークゴールドに拡大する高級ボタン風 */
+        .gold-button-style {
+            background-color: var(--gold);
             color: white;
-            padding: 16px;
-            border-radius: 20px;
+            padding: 18px;
+            border-radius: 30px;
             margin: 30px 0;
             font-size: 16px;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(30, 115, 93, 0.2);
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
         }
-        /* 情報カード：丸みを強くして、ふんわり立体的に */
-        .info-card {
-            background-color: white;
+        .gold-button-style:hover {
+            background-color: var(--dark-gold);
+            transform: scale(1.03);
+        }
+
+        /* テンプレート指定の「ガラス表現（backdrop-filter）のカード」 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 24px;
-            padding: 25px;
-            margin: 20px 0;
-            text-align: center; /* 中央揃えでおしゃれに */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-            border: 2px solid #eadecc;
+            padding: 35px 25px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            transition: transform 0.4s ease;
         }
-        .info-title {
-            color: #a62b2b;
-            font-weight: 700;
-            font-size: 17px;
+        .glass-card:hover {
+            transform: translateY(-5px); /* テンプレートの「浮き上がる」演出 */
+        }
+
+        .card-title {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--wine-red);
+            font-size: 24px;
+            font-weight: bold;
             margin-top: 0;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
-        .info-detail {
+
+        /* 見出し横の金色ライン */
+        .card-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--gold);
+            margin: 10px auto 0 auto;
+        }
+
+        .card-detail {
             font-size: 16px;
+            color: var(--text-dark);
             margin: 0;
-            color: #3e3830;
+        }
+
+        .date-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--wine-red);
+            display: block;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>みんな集まれ！<br>教会でワイワイ楽しい<br>クリスマス会2026 🎄</h1>
-        <h2>〜くまモンもやってくる！？〜</h2>
-    </div>
-
-    <div class="content">
-        <p class="intro-text">
-            美味しいカレーパーティーやバザー、楽しいステージにサンタさんも登場！みんなで最高の思い出を一緒に作りましょう！
-        </p>
-
-        <div class="highlight">
-            🚗 今回は駐車場もあります！<br>お車でも安心してお越しください♪
+    <div class="snow-bg">
+        <!-- メイン看板（Hero） -->
+        <div class="hero">
+            <h1 class="hero-title">Merry Christmas</h1>
+            <p class="hero-subtitle">みんな集まれ！教会でワイワイ楽しい<br>クリスマス会2026 🎄</p>
+            <span style="color: var(--gold); font-size: 15px; margin-top: 15px; letter-spacing: 1px;">〜くまモンもやってくる！？〜</span>
         </div>
 
-        <div class="info-card">
-            <p class="info-title">📅 いつ</p>
-            <p class="info-detail">
-                <b>2026年12月5日（土）</b><br>
-                11:00 〜 15:30
+        <div class="container">
+            <p style="font-size: 16px; text-align: center; color: #555; margin-bottom: 40px; padding: 0 10px;">
+                美味しいカレーパーティーやバザー、楽しいステージにサンタさんも登場！冬の静けさの中に温もりがあふれる、特別な1日をみんなで一緒に過ごしましょう。
             </p>
-        </div>
 
-        <div class="info-card">
-            <p class="info-title">📍 どこで</p>
-            <p class="info-detail">
-                <b>熊本市東区</b><br>
-                <span style="font-size: 14px; color: #8a7e72;">（QQP4+XQ 熊本市、熊本県）</span>
-                <span style="color: #1e735d; font-size: 13px; display: block; margin-top: 8px; font-weight: bold;">
-                    ※下にGoogleマップを表示する準備中！
-                </span>
-            </p>
+            <!-- 駐車場案内 -->
+            <div class="gold-button-style">
+                🚗 今回は駐車場もあります！お車でも安心してお越しください♪
+            </div>
+
+            <!-- 日時カード -->
+            <div class="glass-card">
+                <p class="card-title">Event Date</p>
+                <p class="card-detail">
+                    <span class="date-number">12 / 05 <span style="font-size: 18px;">(Sat)</span></span>
+                    <b>11:00 〜 15:30</b>
+                </p>
+            </div>
+
+            <!-- 場所カード -->
+            <div class="glass-card">
+                <p class="card-title">Access</p>
+                <p class="card-detail">
+                    <b style="font-size: 17px;">熊本市東区</b><br>
+                    <span style="font-size: 14px; color: #666;">（QQP4+XQ 熊本市、熊本県）</span>
+                    <span style="color: var(--wine-red); font-size: 13px; display: block; margin-top: 15px; font-weight: bold;">
+                        ↓この下にGoogleマップを埋め込みます！
+                    </span>
+                </p>
+            </div>
         </div>
     </div>
 
